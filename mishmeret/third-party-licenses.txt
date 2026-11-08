@@ -73,7 +73,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== @expo/metro-runtime 58.0.16 (MIT) ====
+==== @expo/metro-runtime 58.0.17 (MIT) ====
 
 The MIT License (MIT)
 
@@ -130,7 +130,7 @@ No license file in the package. License: MIT.
 
 No license file in the package. License: MIT.
 
-==== expo 58.0.22 (MIT) ====
+==== expo 58.0.23 (MIT) ====
 
 The MIT License (MIT)
 
@@ -178,7 +178,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== expo-asset 58.0.19 (MIT) ====
+==== expo-asset 58.0.20 (MIT) ====
 
 The MIT License (MIT)
 
@@ -250,7 +250,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== expo-constants 58.0.14 (MIT) ====
+==== expo-constants 58.0.15 (MIT) ====
 
 The MIT License (MIT)
 
@@ -514,7 +514,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== expo-linking 58.0.15 (MIT) ====
+==== expo-linking 58.0.16 (MIT) ====
 
 The MIT License (MIT)
 
@@ -562,7 +562,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== expo-notifications 58.1.7 (MIT) ====
+==== expo-notifications 58.1.8 (MIT) ====
 
 The MIT License (MIT)
 
@@ -610,11 +610,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== expo-router 58.0.29 (MIT) ====
+==== expo-router 58.0.30 (MIT) ====
 
 No license file in the package. License: MIT.
 
-==== expo-sharing 58.0.21 (MIT) ====
+==== expo-sharing 58.0.22 (MIT) ====
 
 The MIT License (MIT)
 
@@ -638,7 +638,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-==== expo-splash-screen 58.0.12 (MIT) ====
+==== expo-splash-screen 58.0.13 (MIT) ====
 
 The MIT License (MIT)
 
@@ -1092,7 +1092,7 @@ You may obtain a copy of the Creative Commons Attribution 3.0 License at
 
     https://creativecommons.org/licenses/by/3.0/
 
-==== react-native-safe-area-context 5.10.1 (MIT) ====
+==== react-native-safe-area-context 5.11.1 (MIT) ====
 
 MIT License
 
