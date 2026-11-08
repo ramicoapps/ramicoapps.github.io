@@ -37,8 +37,9 @@ p{margin:0}
 mark{background:#FEF3C7;color:#92400E;border-radius:4px;padding:0 4px}
 
 /* nav */
-.nav{position:absolute;top:0;inset-inline:0;z-index:4}
-.nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:16px;flex-wrap:wrap}
+.nav{position:fixed;top:0;inset-inline:0;z-index:20;background:var(--night)}
+html{scroll-padding-top:84px}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;direction:ltr;color:#fff}
 .word{font-family:var(--logo);font-size:22px;line-height:1;white-space:nowrap}
 .word b{font-weight:800}.word i{font-style:normal;font-weight:500;color:var(--spark)}
@@ -112,6 +113,9 @@ mark{background:#FEF3C7;color:#92400E;border-radius:4px;padding:0 4px}
 .doclinks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:15px}
 .doclinks a{color:#fff;opacity:.92}
 .doclinks a:hover{color:var(--spark);opacity:1}
+.band.cream .doclinks a{color:var(--ink);opacity:1}.band.cream .doclinks a:hover{color:var(--blue)}
+.swap-shot{flex:none;padding:0;border:0;background:none;cursor:pointer;border-radius:22px;transition:transform .15s ease-out}.swap-shot:hover{transform:translateY(-3px)}.swap-shot:focus-visible{outline:3px solid var(--ink);outline-offset:3px}.phone img{transition:opacity .18s ease-out}
+.band.cream .more{border-top-color:rgba(20,26,46,.14)}.band.cream .strip img{border-color:rgba(20,26,46,.12)}
 .soon-store{opacity:.6}
 
 /* legal pages */
@@ -136,7 +140,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   .phone{width:220px}.phone-wrap::before{width:260px;height:260px}
   .hero .in{padding:130px 16px 100px}
 }
-@media (max-width:480px){.wrap{padding:0 16px}.links{gap:16px}.word{font-size:19px}}
+@media (max-width:480px){.wrap{padding:0 16px}.nav .wrap{padding-top:16px;padding-bottom:12px;row-gap:12px}html{scroll-padding-top:120px}.links{gap:16px}.word{font-size:19px}}
 </style>
 </head>
 <body>
@@ -226,9 +230,58 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
       <div class="more" id="mishmeret">
         <h4>עוד מסכים</h4>
         <div class="strip">
-          <img src="img/m-shifts.jpg" alt="רשימת המשמרות של החודש" width="420" height="845" loading="lazy">
-          <img src="img/m-add.jpg" alt="הוספת משמרת, חופשה, מחלה או חג" width="420" height="845" loading="lazy">
-          <img src="img/m-chart.jpg" alt="גרף שעות לפי חודש" width="420" height="845" loading="lazy">
+          <button type="button" class="swap-shot" aria-label="להציג את המסך בטלפון"><img src="img/m-shifts.jpg" alt="רשימת המשמרות של החודש" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="להציג את המסך בטלפון"><img src="img/m-add.jpg" alt="הוספת משמרת, חופשה, מחלה או חג" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="להציג את המסך בטלפון"><img src="img/m-chart.jpg" alt="גרף שעות לפי חודש" width="420" height="845" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="app-cipher-worlds" aria-labelledby="cw-h">
+    <div class="wrap">
+      <div class="band-title">
+        <p class="eyebrow">משחק לכל המשפחה</p>
+        <h2 id="cw-h">ללמוד קוד מורס במשחק</h2>
+      </div>
+      <div class="app-row">
+        <div class="app-copy">
+          <div class="app-id">
+            <img src="img/cipher-worlds-icon.png" alt="" width="76" height="76">
+            <h3>Cipher Worlds: Morse<small>משחק ללימוד קוד מורס</small></h3>
+          </div>
+          <p>פיפ יוצא למסע בעשרה עולמות, ובכל שלב לומדים עוד אותיות בקוד מורס: מקשיבים לאותות, מפענחים הודעות ומשדרים בעצמכם.</p>
+          <p>בדרך אוספים כוכבים ופריטים, בונים את העולם של פיפ ופוגשים חברים חדשים. אפשר ללמוד מורס עברי או מורס בינלאומי.</p>
+          <ul class="ticks">
+            <li>עשרה עולמות עם סיפור</li>
+            <li>מורס עברי ומורס בינלאומי</li>
+            <li>בעברית ובאנגלית</li>
+          </ul>
+          <div class="stores">
+            <span class="store soon-store" aria-label="Google Play, בקרוב"><small>Coming soon</small><span>Google Play</span></span>
+            <span class="store soon-store" aria-label="App Store, בקרוב"><small>Coming soon</small><span>App Store</span></span>
+          </div>
+          <p class="linkhint">המשחק כולל פרסומות ורכישות בתוך המשחק. הוא מיועד לילדים ולמבוגרים, ושחקנים מתחת לגיל 13 רואים רק פרסומות שאינן מותאמות אישית.</p>
+          <nav class="doclinks" aria-label="המסמכים של Cipher Worlds">
+            <a href="/cipher-worlds/he/privacy/">מדיניות פרטיות</a>
+            <a href="/cipher-worlds/he/terms/">תנאי שימוש</a>
+            <a href="/cipher-worlds/he/refunds/">ביטולים והחזרים</a>
+            <a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a>
+            <a href="/cipher-worlds/he/minors/">קטינים והורים</a>
+            <a href="/cipher-worlds/he/licenses/">רישיונות</a>
+            <a href="/cipher-worlds/en/" lang="en">English</a>
+          </nav>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone"><img src="img/cw-home.jpg" alt="מסך הפתיחה של Cipher Worlds: Morse עם פיפ" width="420" height="845"></div>
+        </div>
+      </div>
+      <div class="more">
+        <h4>עוד מסכים</h4>
+        <div class="strip">
+          <button type="button" class="swap-shot" aria-label="להציג את המסך בטלפון"><img src="img/cw-world.jpg" alt="מפת השלבים של אחד העולמות" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="להציג את המסך בטלפון"><img src="img/cw-level.jpg" alt="שלב במשחק: מקשיבים לאות ובוחרים את התשובה" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="להציג את המסך בטלפון"><img src="img/cw-pipworld.jpg" alt="העולם של פיפ, שבונים לאורך המשחק" width="420" height="845" loading="lazy"></button>
         </div>
       </div>
     </div>
@@ -246,8 +299,8 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   <section class="about" id="about" aria-labelledby="about-h">
     <div class="wrap">
       <p class="eyebrow">עלינו</p>
-      <h2 id="about-h">מאחורי RamiCoApps</h2>
-      <p>RamiCoApps הוא השם המסחרי שתחתיו רמי כהן, עוסק פטור, מפרסם את האפליקציות שהוא מפתח. כל אפליקציה מתחילה מבעיה אמיתית מהחיים, ונבנית כך שתהיה ברורה ונוחה לשימוש.</p>
+      <h2 id="about-h">נעים להכיר, RamiCoApps!</h2>
+      <p>אנחנו סטודיו עצמאי עם תשוקה לפיתוח אפליקציות חכמות ומשחקים ממכרים. כל אפליקציה אצלנו נולדה מתוך החיים האמיתיים, וכל משחק נבנה כדי לעשות קצת שמח. בלי סיבוכים, בלי ממשקים מעייפים — רק כלים שעובדים בשבילכם ומשחקים שכיף להעביר איתם את הזמן, בעיצוב נגיש ונוח לכולם.</p>
     </div>
   </section>
 </div>
@@ -311,6 +364,22 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   size();draw();
   window.addEventListener('resize',function(){size();if(still)draw();});
 })();
+</script>
+<script>
+document.querySelectorAll('.swap-shot').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var shot = btn.querySelector('img');
+    var phone = btn.closest('section').querySelector('.phone img');
+    var src = phone.src, alt = phone.alt;
+    phone.style.opacity = 0;
+    setTimeout(function () {
+      phone.src = shot.src; phone.alt = shot.alt;
+      shot.src = src; shot.alt = alt;
+      phone.style.opacity = 1;
+    }, 150);
+    if (window.innerWidth < 900) phone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+});
 </script>
 </body>
 </html>

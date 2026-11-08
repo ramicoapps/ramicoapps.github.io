@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ביטולים והחזרים · Cipher Worlds: Morse · RamiCoApps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Outfit:wght@500;800&display=swap"
+/>
+<style>
+  :root {
+    --night: #0b1226;
+    --paper: #ffffff;
+    --ink: #141a2e;
+    --soft: #5b6378;
+    --blue: #3b82f6;
+    --spark: #fbbf24;
+    --cream: #fbf6ec;
+    --head: 'Heebo', system-ui, sans-serif;
+    --body: 'Heebo', system-ui, sans-serif;
+    --logo: 'Outfit', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  a {
+    color: var(--blue);
+  }
+  a:focus-visible {
+    outline: 3px solid var(--spark);
+    outline-offset: 3px;
+  }
+  h1,
+  h2 {
+    font-family: var(--head);
+    margin: 0;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  p {
+    margin: 0;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .nav {
+    background: var(--night);
+  }
+  .nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 76px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    direction: ltr;
+    color: #fff;
+  }
+  .word {
+    font-family: var(--logo);
+    font-size: 22px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .word b {
+    font-weight: 800;
+  }
+  .word i {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--spark);
+  }
+  .links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+  }
+  .links a:hover {
+    opacity: 1;
+    color: var(--spark);
+  }
+  .doc {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 24px 90px;
+  }
+  .doc .back {
+    color: var(--soft);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .doc h1 {
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 900;
+    margin-top: 18px;
+  }
+  .doc .updated {
+    color: var(--soft);
+    font-size: 15px;
+    margin-top: 6px;
+  }
+  .doc .note {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin-top: 18px;
+  }
+  .doc h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 34px 0 8px;
+  }
+  .doc p + p {
+    margin-top: 12px;
+  }
+  .doc ul {
+    padding-inline-start: 22px;
+    margin: 16px 0;
+  }
+  .doc li + li {
+    margin-top: 6px;
+  }
+  .doc a {
+    overflow-wrap: anywhere;
+  }
+  footer {
+    background: var(--night);
+    color: #c9d3ea;
+    padding: 40px 0;
+    font-size: 15px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--spark);
+  }
+  footer .fl {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 480px) {
+    .wrap {
+      padding: 0 16px;
+    }
+    .links {
+      gap: 16px;
+    }
+    .word {
+      font-size: 19px;
+    }
+    .doc {
+      padding: 36px 16px 72px;
+    }
+  }
+</style>
+<style>.nav{position:sticky;top:0;z-index:20}html{scroll-padding-top:84px}.nav .wrap{padding-top:12px;padding-bottom:12px}@media (max-width:480px){.nav .wrap{padding-top:16px;row-gap:12px}html{scroll-padding-top:120px}}
+.doc h3{font-size:18px;font-weight:800;margin:24px 0 6px}
+.doc ol{padding-inline-start:22px;margin:16px 0}.doc ol li+li{margin-top:6px}
+.doc .table{overflow-x:auto;margin:16px 0}.doc table{border-collapse:collapse;width:100%;font-size:15px}
+.doc th,.doc td{border:1px solid #E3E7F0;padding:8px 10px;text-align:start;vertical-align:top}
+.doc th{background:var(--cream)}.doc code{font-size:.9em;background:var(--cream);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <symbol id="tileR" viewBox="15.5 6.5 69 87">
+    <rect x="15.5" y="6.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="33.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="51.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="15.5" y="24.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="69.5" y="24.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="15.5" y="42.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="33.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="51.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="15.5" y="60.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="51.5" y="60.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="15.5" y="78.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="69.5" y="78.5" width="15" height="15" rx="4" fill="#FBBF24" />
+  </symbol>
+</svg>
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="/" aria-label="RamiCoApps, לעמוד הבית"><svg width="24" height="30" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+<nav class="links" aria-label="ניווט"><a href="/#app-cipher-worlds">האפליקציות</a><a href="/cipher-worlds/he/privacy/">פרטיות</a><a href="/cipher-worlds/he/terms/">תנאי שימוש</a><a href="/cipher-worlds/en/refunds/" lang="en">English</a></nav>
+</div>
+</header>
+<article class="doc">
+<a class="back" href="/cipher-worlds/he/">← למסמכים של Cipher Worlds</a>
+<h1>ביטולים והחזרים</h1>
+<p class="updated">עודכן ב-8.11.2026</p>
+<p><strong>גרסה 1.0 · תאריך תחילה: 8.11.2026</strong></p>
+<p>מדיניות זו מסבירה איך פועלים החזרים וביטולים של רכישות במשחק <strong>Cipher Worlds: Morse</strong> ("המשחק"), של רמי כהן, עוסק פטור בישראל, בשם המסחרי <strong>RamiCoApps</strong> ("אנחנו").</p>
+<h2>1. מי מטפל בתשלומים</h2>
+<ul><li>כל הרכישות במשחק נעשות <strong>רק דרך Google Play</strong> (Android) <strong>או Apple App Store</strong> (iPhone ו-iPad). איננו מוכרים דבר ישירות, ואיננו מקבלים או רואים את פרטי התשלום שלך.</li><li>החנות שחייבה אותך היא זו שמטפלת בהחזרים. <strong>איננו יכולים להחזיר בעצמנו כסף על חיוב של החנות</strong>, אבל נשמח לעזור בכל בעיה (ראו סעיף 6).</li><li>אין במשחק מנויים, ולכן אין חיוב מתחדש שצריך לבטל.</li></ul>
+<h2>2. מה אפשר לקנות</h2>
+<div class="table"><table><thead><tr><th>רכישה</th><th>סוג</th><th>הערות</th></tr></thead><tbody><tr><td><strong>Premium</strong></td><td>חד-פעמית, קבועה</td><td>מסירה את הפרסומות בין השלבים ומוסיפה רמזים. אפשר לשחזר ב"שחזור רכישות".</td></tr><tr><td><strong>חבילות רמזים</strong> (10 / 30 / 80 / 200)</td><td>מתכלה</td><td>מתווספות לארנק במשחק אחרי שהחנות מאשרת את התשלום.</td></tr><tr><td><strong>חבילות מטבעות</strong> (500 / 1,000 / 2,000 / 5,000)</td><td>מתכלה</td><td>מתווספות לארנק במשחק אחרי שהחנות מאשרת את התשלום.</td></tr><tr><td><strong>חבילות יהלומים</strong> (20 / 45 / 80 / 200)</td><td>מתכלה</td><td>מתווספות לארנק במשחק אחרי שהחנות מאשרת את התשלום.</td></tr></tbody></table></div>
+<p>למטבעות, ליהלומים ולרמזים אין ערך כספי, ואפשר להשיג אותם גם במשחק עצמו.</p>
+<h2>3. איך מבקשים החזר</h2>
+<h3>Google Play (Android)</h3>
+<ul><li>מבקשים החזר דרך Google Play, כמתואר בדף העזרה של Google "בקשת החזר כספי ב-Google Play". Google מחליטה לפי מדיניות ההחזרים שלה, שעשויה להשתנות ממדינה למדינה.</li><li>למי שגר באזור הכלכלי האירופי (EEA) או בבריטניה יש ל-Google דף נפרד על החזרים לאפליקציות, למשחקים ולרכישות בתוך אפליקציות במדינות אלה.</li><li>אפשר גם לכתוב לנו (סעיף 6) וננסה לעזור.</li></ul>
+<h3>Apple App Store (iPhone / iPad)</h3>
+<ul><li>נכנסים ל-<strong>reportaproblem.apple.com</strong>, מתחברים עם חשבון Apple, בוחרים <strong>"Request a refund" (בקשת החזר)</strong>, בוחרים סיבה ופריט, ושולחים. Apple מחליטה בבקשה.</li></ul>
+<p>הכללים ומגבלות הזמן של כל חנות חלים. הקישורים מופיעים בסעיף "מקורות" בסוף המסמך.</p>
+<h2>4. מצבים מיוחדים</h2>
+<h3>Premium</h3>
+<p>Premium קשורה לחשבון החנות שלך. אם התקנת מחדש, איפסת את המשחק או עברת למכשיר חדש עם אותו חשבון חנות, הקש/י <strong>"שחזור רכישות"</strong> במסך Premium כדי לקבל אותה בחזרה – אין צורך לקנות שוב. אם החנות מחזירה את הכסף על Premium, ההטבות של Premium מוסרות.</p>
+<h3>חבילות מתכלות (רמזים, מטבעות, יהלומים)</h3>
+<p>החבילות נמסרות לארנק שבמכשיר מיד אחרי שהחנות מאשרת את התשלום, ואפשר להשתמש בהן מיד. בבקשות החזר מחליטה החנות, לפי המדיניות שלה ולפי הדין החל עליך.</p>
+<h3>חיוב כפול</h3>
+<p>אם רואים שני חיובים על רכישה אחת, כדאי לבדוק קודם את היסטוריית ההזמנות בחנות (לפעמים זו הרשאה זמנית שנעלמת מעצמה). אם אכן חויבת פעמיים, בקש/י מהחנות החזר על החיוב העודף, ופנה/י אלינו אם צריך עזרה.</p>
+<h3>שילמתי ולא קיבלתי</h3>
+<ol><li>ודא/י שאת/ה מחובר/ת לאותו חשבון חנות ששילמת בו.</li><li>סגור/י ופתח/י מחדש את המשחק, עם חיבור לאינטרנט.</li><li>ב-Premium, הקש/י <strong>"שחזור רכישות"</strong>.</li><li>אם זה עדיין לא עובד, כתוב/י לנו ל-<strong>ramicoapps@gmail.com</strong> עם <strong>מספר ההזמנה</strong> מהקבלה של החנות (Google Play: מתחיל ב-"GPA."; Apple: מספר ההזמנה שבקבלה) ועם הפריט שקנית. נא לא לשלוח פרטי כרטיס אשראי או סיסמאות.</li></ol>
+<p>חלק מאמצעי התשלום דורשים זמן לאישור. במקרה כזה הרכישה מופיעה כממתינה, והפריט נמסר רק אחרי שהחנות מאשרת אותה.</p>
+<h3>רכישה בטעות של ילד</h3>
+<ul><li>בקש/י החזר מהחנות (Google Play או Apple, ראו סעיף 3).</li><li>כדי למנוע זאת בעתיד, השתמש/י בבקרת ההורים של החנויות:<ul><li><strong>Google Play:</strong> דרישת אימות (סיסמה או זיהוי ביומטרי) לכל רכישה, ו/או <strong>Google Family Link</strong>.</li><li><strong>Apple:</strong> <strong>Ask to Buy (בקשת רכישה)</strong> ב-Family Sharing, והגבלות <strong>Screen Time (זמן מסך)</strong> על רכישות בתוך אפליקציות.</li></ul></li></ul>
+<h3>התקדמות שאבדה</h3>
+<p>אם ההתקדמות נמחקה (למשל אחרי הסרת המשחק או איפוס בלי גיבוי), איננו יכולים לשחזר אותה כי אין לנו עותק שלה. את Premium תמיד אפשר לשחזר ב"שחזור רכישות". על גיבויים ושמירה בענן ראו סעיף 9 בתנאי השימוש.</p>
+<h2>5. הזכויות שלך לפי הדין</h2>
+<p>שום דבר במדיניות זו אינו מגביל זכות שיש לך לפי דיני הגנת הצרכן החלים עליך. <strong>מדיניות זו אינה קובעת שאין החזר על רכישות.</strong></p>
+<h3>צרכנים בישראל</h3>
+<p><strong>חוק הגנת הצרכן, התשמ"א-1981</strong>, סעיף 14ג, מעניק לצרכן זכות לבטל "עסקת מכר מרחוק" (עסקה שנעשית בלי שהמוכר והקונה נמצאים יחד, למשל באינטרנט) – ככלל בתוך 14 יום, כמפורט בחוק. החוק מונה גם חריגים לזכות זו, ובהם <strong>"מידע" כהגדרתו בחוק המחשבים, התשנ"ה-1995</strong>, וטובין הניתנים להקלטה, לשעתוק או לשכפול שהצרכן פתח את אריזתם המקורית. כשצרכן מבטל מסיבה שאינה פגם או הפרה, החוק מתיר דמי ביטול של עד 5% מהמחיר או 100 ש"ח, לפי הנמוך מביניהם (סעיף 14ה).</p>
+<p>לא אומת אם ואיך כללים וחריגים אלה חלים על פריטים דיגיטליים שנקנים בתוך משחק דרך Google Play או Apple. אם את/ה צרכן/ית בישראל ורוצה לבטל רכישה, פנה/י לחנות ו/או אלינו, ונטפל בבקשה לפי הדין.</p>
+<h3>צרכנים באיחוד האירופי ובבריטניה</h3>
+<p>לפי דיני הצרכנות של האיחוד האירופי (הדירקטיבה 2011/83/EU, סעיף 16(m)), זכות הביטול בת 14 הימים אינה חלה על תוכן דיגיטלי שאינו מסופק על גבי מדיום מוחשי, אחרי שהאספקה החלה בהסכמה מפורשת מראש של הצרכן ובאישורו שהוא מוותר על זכות הביטול. החנויות הן שמקבלות את ההסכמה הזו בעת הרכישה. למשל, Google Play מסבירה שבתוכן דיגיטלי שנקנה ב-EEA או בבריטניה הקונה מסכים שהתוכן זמין מיד ומוותר על זכות הביטול האוטומטית, ושהחזר עדיין אפשרי לתוכן פגום, לא זמין או שאינו פועל כמתואר. זכויותיך לגבי תוכן דיגיטלי פגום אינן נפגעות.</p>
+<h2>6. מה אנחנו יכולים ומה לא</h2>
+<p><strong>אנחנו יכולים:</strong> לעזור לאתר רכישה, להסביר איך לשחזר Premium, לבדוק בעיות מסירה במשחק, ולתמוך בבקשת ההחזר שלך מול החנות.</p>
+<p><strong>איננו יכולים:</strong> להחזיר בעצמנו כסף על חיוב של Google Play או Apple, לראות את פרטי התשלום שלך, או לשחזר התקדמות שנמחקה מהמכשיר שלך.</p>
+<p>יצירת קשר: <strong>ramicoapps@gmail.com</strong></p>
+<h2>מקורות</h2>
+<ul><li>Google Play – בקשת החזר כספי: <a href="https://support.google.com/googleplay/answer/15574897" rel="noopener">https://support.google.com/googleplay/answer/15574897</a></li><li>Google Play – מדיניות ההחזרים: <a href="https://support.google.com/googleplay/answer/2479637" rel="noopener">https://support.google.com/googleplay/answer/2479637</a></li><li>Google Play – מדיניות החזרים ב-EEA ובבריטניה: <a href="https://support.google.com/googleplay/answer/15576634" rel="noopener">https://support.google.com/googleplay/answer/15576634</a></li><li>Google Play – בעיות ברכישות בתוך אפליקציות: <a href="https://support.google.com/googleplay/answer/1050566" rel="noopener">https://support.google.com/googleplay/answer/1050566</a></li><li>Google Play – אימות רכישות: <a href="https://support.google.com/googleplay/answer/1626831" rel="noopener">https://support.google.com/googleplay/answer/1626831</a></li><li>Apple – בקשת החזר: <a href="https://support.apple.com/en-us/118223" rel="noopener">https://support.apple.com/en-us/118223</a></li><li>Apple – Report a Problem: <a href="https://reportaproblem.apple.com" rel="noopener">https://reportaproblem.apple.com</a></li><li>Apple – Ask to Buy: <a href="https://support.apple.com/en-us/105055" rel="noopener">https://support.apple.com/en-us/105055</a></li><li>חוק הגנת הצרכן, התשמ"א-1981, סעיפים 14ג, 14ה (נבו): <a href="https://www.nevo.co.il/law_html/law01/089_001.htm" rel="noopener">https://www.nevo.co.il/law_html/law01/089_001.htm</a></li><li>כל זכות – עסקת מכר מרחוק: <a href="https://www.kolzchut.org.il/he/עסקת_מכר_מרחוק" rel="noopener">https://www.kolzchut.org.il/he/עסקת_מכר_מרחוק</a></li><li>האיחוד האירופי – הדירקטיבה 2011/83/EU (EUR-Lex): <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0083" rel="noopener">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0083</a></li></ul>
+<h2>מסמכים משפטיים</h2>
+<ul><li><a href="/cipher-worlds/he/privacy/">מדיניות פרטיות</a></li><li><a href="/cipher-worlds/he/terms/">תנאי שימוש</a></li><li><a href="/cipher-worlds/he/refunds/">ביטולים והחזרים</a></li><li><a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a></li><li><a href="/cipher-worlds/he/minors/">קטינים והורים</a></li><li><a href="/cipher-worlds/he/licenses/">רישיונות וקרדיטים</a></li></ul>
+</article>
+<footer>
+<div class="wrap">
+<a class="brand" href="/" aria-label="RamiCoApps, לעמוד הבית"><svg width="22" height="28" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+<div class="fl"><a href="/cipher-worlds/he/">מסמכים משפטיים</a><a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a><span>תמיכה: <a href="mailto:ramicoapps@gmail.com" dir="ltr">ramicoapps@gmail.com</a></span><span dir="ltr">© 2026 RamiCoApps</span></div>
+</div>
+</footer>
+</body>
+</html>

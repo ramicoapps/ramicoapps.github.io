@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תנאי שימוש · Cipher Worlds: Morse · RamiCoApps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Outfit:wght@500;800&display=swap"
+/>
+<style>
+  :root {
+    --night: #0b1226;
+    --paper: #ffffff;
+    --ink: #141a2e;
+    --soft: #5b6378;
+    --blue: #3b82f6;
+    --spark: #fbbf24;
+    --cream: #fbf6ec;
+    --head: 'Heebo', system-ui, sans-serif;
+    --body: 'Heebo', system-ui, sans-serif;
+    --logo: 'Outfit', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  a {
+    color: var(--blue);
+  }
+  a:focus-visible {
+    outline: 3px solid var(--spark);
+    outline-offset: 3px;
+  }
+  h1,
+  h2 {
+    font-family: var(--head);
+    margin: 0;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  p {
+    margin: 0;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .nav {
+    background: var(--night);
+  }
+  .nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 76px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    direction: ltr;
+    color: #fff;
+  }
+  .word {
+    font-family: var(--logo);
+    font-size: 22px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .word b {
+    font-weight: 800;
+  }
+  .word i {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--spark);
+  }
+  .links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+  }
+  .links a:hover {
+    opacity: 1;
+    color: var(--spark);
+  }
+  .doc {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 24px 90px;
+  }
+  .doc .back {
+    color: var(--soft);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .doc h1 {
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 900;
+    margin-top: 18px;
+  }
+  .doc .updated {
+    color: var(--soft);
+    font-size: 15px;
+    margin-top: 6px;
+  }
+  .doc .note {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin-top: 18px;
+  }
+  .doc h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 34px 0 8px;
+  }
+  .doc p + p {
+    margin-top: 12px;
+  }
+  .doc ul {
+    padding-inline-start: 22px;
+    margin: 16px 0;
+  }
+  .doc li + li {
+    margin-top: 6px;
+  }
+  .doc a {
+    overflow-wrap: anywhere;
+  }
+  footer {
+    background: var(--night);
+    color: #c9d3ea;
+    padding: 40px 0;
+    font-size: 15px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--spark);
+  }
+  footer .fl {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 480px) {
+    .wrap {
+      padding: 0 16px;
+    }
+    .links {
+      gap: 16px;
+    }
+    .word {
+      font-size: 19px;
+    }
+    .doc {
+      padding: 36px 16px 72px;
+    }
+  }
+</style>
+<style>.nav{position:sticky;top:0;z-index:20}html{scroll-padding-top:84px}.nav .wrap{padding-top:12px;padding-bottom:12px}@media (max-width:480px){.nav .wrap{padding-top:16px;row-gap:12px}html{scroll-padding-top:120px}}
+.doc h3{font-size:18px;font-weight:800;margin:24px 0 6px}
+.doc ol{padding-inline-start:22px;margin:16px 0}.doc ol li+li{margin-top:6px}
+.doc .table{overflow-x:auto;margin:16px 0}.doc table{border-collapse:collapse;width:100%;font-size:15px}
+.doc th,.doc td{border:1px solid #E3E7F0;padding:8px 10px;text-align:start;vertical-align:top}
+.doc th{background:var(--cream)}.doc code{font-size:.9em;background:var(--cream);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <symbol id="tileR" viewBox="15.5 6.5 69 87">
+    <rect x="15.5" y="6.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="33.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="51.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="15.5" y="24.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="69.5" y="24.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="15.5" y="42.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="33.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="51.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="15.5" y="60.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="51.5" y="60.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="15.5" y="78.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="69.5" y="78.5" width="15" height="15" rx="4" fill="#FBBF24" />
+  </symbol>
+</svg>
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="/" aria-label="RamiCoApps, לעמוד הבית"><svg width="24" height="30" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+<nav class="links" aria-label="ניווט"><a href="/#app-cipher-worlds">האפליקציות</a><a href="/cipher-worlds/he/privacy/">פרטיות</a><a href="/cipher-worlds/he/terms/">תנאי שימוש</a><a href="/cipher-worlds/en/terms/" lang="en">English</a></nav>
+</div>
+</header>
+<article class="doc">
+<a class="back" href="/cipher-worlds/he/">← למסמכים של Cipher Worlds</a>
+<h1>תנאי שימוש</h1>
+<p class="updated">עודכן ב-8.11.2026</p>
+<p><strong>גרסה 1.0 · תאריך תחילה: 8.11.2026</strong></p>
+<p>תנאי שימוש אלה ("התנאים") חלים על משחק המובייל <strong>Cipher Worlds: Morse</strong> ("המשחק"). כדאי לקרוא אותם לפני שמתחילים לשחק. התקנת המשחק או השימוש בו מהווים הסכמה לתנאים. אם אינך מסכים/ה להם, אין להשתמש במשחק.</p>
+<p><strong>להורים ולאפוטרופוסים:</strong> במשחק משחקים ילדים ומבוגרים. אם את/ה הורה או אפוטרופוס, מומלץ לעבור על התנאים יחד עם הילד ולהסביר לו אותם, במיוחד את החלקים שעוסקים ברכישות ובפרסומות.</p>
+<h2>1. מי אנחנו</h2>
+<p>את המשחק פיתח ומפעיל רמי כהן, עוסק פטור בישראל, בשם המסחרי <strong>RamiCoApps</strong> ("אנחנו").</p>
+<ul><li>דוא"ל: <strong>ramicoapps@gmail.com</strong></li></ul>
+<h2>2. המשחק</h2>
+<p>Cipher Worlds: Morse הוא משחק לשחקן יחיד שמלמד קוד מורס. הוא זמין ב-Google Play וב-Apple App Store.</p>
+<ul><li>אין במשחק חשבונות משתמש, אין צ'אט ואין תוכן שמשותף בין שחקנים.</li><li>ההתקדמות, ההגדרות והפריטים במשחק נשמרים <strong>רק במכשיר שלך</strong>.</li><li>ההורדה בחינם. במשחק מוצגות פרסומות, ויש בו רכישות אופציונליות (סעיף 6).</li></ul>
+<p>האופן שבו המשחק מטפל במידע מוסבר ב<strong>מדיניות הפרטיות</strong> <a href="/cipher-worlds/he/privacy/">מדיניות הפרטיות</a>.</p>
+<h2>3. הרישיון שלך להשתמש במשחק</h2>
+<p>אנו מעניקים לך רישיון אישי, מוגבל, שאינו בלעדי, שאינו ניתן להעברה וניתן לביטול, להוריד את המשחק ולהשתמש בו במכשירים שבבעלותך או בשליטתך, להנאתך וללמידה, שלא למטרה מסחרית.</p>
+<p>הרישיון כפוף גם לתנאי החנות שממנה הורדת את המשחק (Google Play או Apple App Store).</p>
+<h2>4. שימוש מותר</h2>
+<p>בשימוש במשחק, נא לא:</p>
+<ul><li>להעתיק, למכור, להשכיר, לתת רישיון משנה או להפיץ את המשחק או חלק ממנו;</li><li>לשנות את המשחק, או ליצור או להשתמש בצ'יטים, פריצות, בוטים או כלים שמשנים את אופן פעולת המשחק, את המטבעות, הפריטים או הרכישות שבו;</li><li>להשיג, או לנסות להשיג, תוכן בתשלום או פריטים וירטואליים בלי לשלם עליהם דרך החנות, או לנצל לרעה את תהליכי ההחזר או "שחזור רכישות";</li><li>לבצע הנדסה לאחור, דה-קומפילציה או פירוק של המשחק, אלא במידה שהדין החל מתיר זאת במפורש למרות הגבלה זו;</li><li>להסיר או לשנות הודעות זכויות יוצרים, סימני מסחר או רישיונות שבמשחק;</li><li>להשתמש במשחק בדרך שמפרה את הדין או את כללי החנות שממנה הורדת אותו;</li><li>להתערב בפרסומות שבמשחק בדרך של הונאה (למשל צפיות או לחיצות אוטומטיות או מזויפות).</li></ul>
+<h2>5. קניין רוחני</h2>
+<p>המשחק – לרבות הדמויות (כמו פיפ והחברים של פיפ), הסיפור, הגרפיקה, האנימציות, המוזיקה, הצלילים, הטקסטים, השלבים והעיצוב – שייך ל-RamiCoApps <strong>או ניתן ל-RamiCoApps ברישיון</strong> מצדדים שלישיים. חלק מהנכסים (למשל גופנים וחלק מאפקטי הקול) משמשים ברישיון מבעליהם, ונשארים בבעלותם.</p>
+<p>המשחק כולל גם <strong>רכיבי תוכנה בקוד פתוח</strong>. כל אחד מהם ניתן לפי הרישיון שלו, ושום דבר בתנאים אלה אינו מגביל את זכויותיך לפי הרישיונות האלה. רשימת הרכיבים והרישיונות שלהם נמצאת ב-<a href="/cipher-worlds/he/licenses/">רישיונות וקרדיטים</a>.</p>
+<p>התנאים אינם מעניקים לך בעלות או זכות כלשהי במשחק או בתוכן שלו, מלבד הרישיון שבסעיף 3. אין להשתמש בשם "Cipher Worlds: Morse" או בלוגו שלו בלי רשותנו.</p>
+<h2>6. רכישות בתוך המשחק</h2>
+<ul><li>כל הרכישות נעשות <strong>רק דרך Google Play או Apple App Store</strong>, באמצעות מערכת התשלום של החנות ולפי תנאיה. איננו מוכרים דבר ישירות, ואיננו רואים את פרטי התשלום שלך.</li><li>המחיר הוא המחיר שהחנות מציגה לפני אישור הרכישה, במטבע המקומי שלך. מסים, ככל שחלים, מחושבים ונגבים על ידי החנות לפי הנדרש במקום מגוריך.</li><li>אין במשחק מנויים.</li><li>מה אפשר לקנות:<ul><li><strong>Premium</strong> – רכישה חד-פעמית. מסירה את הפרסומות שמוצגות בין השלבים ומוסיפה רמזים לארנק. היא אינה מסירה את הפרסומות האופציונליות עם פרס, שאפשר להמשיך לבחור לצפות בהן. Premium קשורה לחשבון החנות שלך, ואפשר לשחזר אותה ב<strong>"שחזור רכישות"</strong> באותו חשבון חנות, גם אחרי איפוס או במכשיר חדש.</li><li><strong>חבילות</strong> של רמזים, מטבעות או יהלומים – פריטים מתכלים שמתווספים לארנק במשחק אחרי שהחנות מאשרת את התשלום.</li></ul></li><li>החזרים וביטולים מוסברים ב<strong>מדיניות הביטולים וההחזרים</strong> <a href="/cipher-worlds/he/refunds/">מדיניות הביטולים וההחזרים</a>. שום דבר בתנאים אלה אינו מגביל זכות להחזר או לביטול שיש לך לפי הדין החל עליך.</li></ul>
+<p>ילדים צריכים לבקש רשות מהורה או מאפוטרופוס לפני כל רכישה. שתי החנויות מציעות בקרת הורים על רכישות (ראו מדיניות הביטולים וההחזרים).</p>
+<h2>7. פריטים וירטואליים ומטבע במשחק</h2>
+<p>במשחק יש פריטים וירטואליים ומטבעות, כמו <strong>מטבעות</strong>, <strong>יהלומים</strong> ו<strong>רמזים</strong>, ופריטים לפיפ, לעולם של פיפ ולאוספים. את כולם אפשר להשיג גם במשחק עצמו; אין צורך לקנות דבר כדי לשחק או לסיים את המשחק.</p>
+<ul><li>לפריטים ולמטבעות הווירטואליים <strong>אין ערך כספי</strong>. אי אפשר להמיר אותם לכסף, למוצרים או לכל דבר מחוץ למשחק, ואי אפשר למכור או להעביר אותם לאדם אחר או למכשיר אחר (מלבד העברת ההתקדמות שלך עצמך בקובץ גיבוי או בשמירה בענן, ראו סעיף 9).</li><li>את/ה מקבל/ת רישיון להשתמש בהם במשחק; הם אינם בבעלותך.</li><li>אנו רשאים לשנות את אופן הפעולה של הפריטים והמטבעות (למשל מחירים במטבעות, פרסים או תדירות הופעתם), כדי לשמור על משחק מאוזן והוגן. לא נשלול פריטים שכבר קיבלת בדרך שאינה הוגנת כלפיך, וכל שינוי יכבד את זכויותיך לפי דיני הגנת הצרכן החלים עליך.</li></ul>
+<p><strong>תיבות הפתעה.</strong> בחנות של המשחק יש תיבות הפתעה שנותנות פריט קוסמטי אקראי (למשל בגדים לפיפ, מסגרת או חיית מחמד), ומשלמים עליהן במטבעות או ביהלומים שהושגו במשחק או נקנו בחבילות. לפני פתיחת תיבה המשחק מציג את הסיכוי לכל דרגת נדירות. לפריטים אין ערך כספי, הם משנים רק את המראה, ואינם נותנים יתרון במשחק.</p>
+<h2>8. פרסומות</h2>
+<p>המשחק חינמי ונתמך בפרסומות של Google AdMob:</p>
+<ul><li><strong>פרסומות עם פרס</strong> – אופציונליות. את/ה בוחר/ת לצפות כדי לקבל פרס במשחק (למשל רמז, תיבה, ניסיונות נוספים או יהלומים). אם אי אפשר להציג פרסומת, לא ניתן פרס.</li><li><strong>פרסומות בין שלבים</strong> – מוצגות מדי פעם אחרי סיום שלבים. <strong>Premium מסירה אותן.</strong></li></ul>
+<p>הפרסומות ניתנות על ידי Google לפי התנאים ומדיניות הפרטיות שלה. האופן שבו פרסומות משתמשות במידע והאפשרויות העומדות לרשותך מוסברים במדיניות הפרטיות.</p>
+<h2>9. ההתקדמות שלך, גיבויים ואובדן מידע</h2>
+<p>ההתקדמות, ההגדרות, הארנק והפריטים שלך נשמרים <strong>רק במכשיר שלך</strong>. אין לנו עותק שלהם, ואיננו יכולים לשחזר אותם עבורך. הם עלולים ללכת לאיבוד אם תסיר/י את המשחק, תשתמש/י ב<strong>הגדרות ← איפוס</strong>, תמחק/י את נתוני האפליקציה, או תאבד/י או תחליף/י מכשיר.</p>
+<p>כדי לשמור על ההתקדמות אפשר:</p>
+<ul><li>לשמור <strong>קובץ גיבוי</strong> מההגדרות ולשמור אותו במקום בטוח; וגם</li><li>ב-Android, להתחבר ל-<strong>Google Play Games</strong> מתוך המשחק ולשמור עותק של ההתקדמות בחשבון Play Games שלך (שמירה בענן).</li></ul>
+<p><strong>Premium</strong> אינה חלק מההתקדמות: היא נשמרת אצל החנות ותמיד אפשר לשחזר אותה ב"שחזור רכישות" באותו חשבון חנות. חבילות מתכלות (רמזים, מטבעות ויהלומים) מתווספות לארנק שבמכשיר; אחרי שנמסרו, הן חלק מההתקדמות, נשמרות איתה והולכות לאיבוד איתה. אם חויבת על רכישה שלא נמסרה, ראו את מדיניות הביטולים וההחזרים.</p>
+<h2>10. זמינות, עדכונים ותקלות</h2>
+<ul><li>אנו עושים מאמץ שהמשחק יעבוד היטב, אך איננו יכולים להבטיח שהוא יהיה נקי מתקלות, זמין תמיד או תואם לכל מכשיר וגרסת מערכת הפעלה.</li><li>אנו עשויים לפרסם עדכונים שמתקנים תקלות, משנים תוכן או משנים תכונות. ייתכן שחלק מהעדכונים יהיו נחוצים כדי להמשיך להשתמש במשחק.</li><li>מצאת תקלה? נשמח לשמוע ב-ramicoapps@gmail.com.</li></ul>
+<h2>11. הפסקת המשחק</h2>
+<p>אנו רשאים להפסיק להציע, לעדכן או לתמוך במשחק, או להסיר אותו מהחנויות. מאחר שהמשחק פועל במכשיר שלך, עותק שכבר הותקן עשוי להמשיך לעבוד, אך איננו יכולים להבטיח זאת (למשל אחרי שינויים במערכת ההפעלה). אם נפסיק את המשחק, ננסה לתת הודעה סבירה מראש ככל האפשר. זכויות שיש לך לפי דיני הגנת הצרכן לגבי רכישות שביצעת אינן נפגעות.</p>
+<h2>12. סיום הרישיון</h2>
+<ul><li>אפשר להפסיק להשתמש במשחק בכל עת, על ידי הסרתו.</li><li>אין במשחק חשבונות, ולכן איננו משעים או סוגרים חשבונות. אם תפר/י את התנאים באופן חמור או חוזר (למשל צ'יטים, העתקה פיראטית או הונאה בקשר לרכישות או לפרסומות), הרישיון שלך להשתמש במשחק מסתיים. רכישות שהושגו בהונאה או בניצול לרעה אינן מכוסות בתנאים אלה.</li><li>סעיפים 5, 7, 13, 14 ו-16 ממשיכים לחול אחרי סיום הרישיון, ככל שהם רלוונטיים.</li></ul>
+<h2>13. הסתייגות</h2>
+<p>במידה המותרת לפי הדין החל, המשחק ניתן "כמות שהוא" ("as is") ו"כפי שהוא זמין". איננו נותנים התחייבויות לגבי המשחק מעבר לאלה שבתנאים אלה ולאלה שהדין מעניק לך ושאי אפשר להתנות עליהן.</p>
+<h2>14. הגבלת אחריות</h2>
+<p>במידה המותרת לפי הדין החל:</p>
+<ul><li>איננו אחראים לנזק עקיף או תוצאתי, או לאובדן מידע או התקדמות שאפשר היה למנוע בגיבוי או בשמירה בענן; וכן</li><li>האחריות הכוללת שלנו כלפיך בקשר למשחק מוגבלת לסכום ששילמת על רכישות במשחק ב-12 החודשים שלפני התביעה.</li></ul>
+<p><strong>שום דבר בתנאים אלה אינו שולל או מגביל זכות או סעד שיש לך כצרכן, שלפי הדין החל עליך אי אפשר לשלול או להגביל בהסכם</strong>, וכן אינו שולל או מגביל את אחריותנו במקרים שבהם הדין אינו מתיר זאת (למשל אחריות למוות או לנזק גוף שנגרמו ברשלנות, או למרמה).</p>
+<h2>15. שינויים בתנאים</h2>
+<p>אנו רשאים לעדכן את התנאים, למשל כשהמשחק או הדין משתנים. הגרסה העדכנית ותאריך התחילה שלה יפורסמו תמיד ב-<a href="/cipher-worlds/he/terms/">תנאי השימוש</a>. אם השינוי מהותי, נודיע עליו במשחק או בדף החנות לפני כניסתו לתוקף. שינויים אינם חלים למפרע על רכישות שכבר בוצעו. אם אינך מסכים/ה לתנאים החדשים, אפשר להפסיק להשתמש במשחק.</p>
+<h2>16. הדין החל וסמכות שיפוט</h2>
+<p>על תנאים אלה חלים דיני <strong>מדינת ישראל</strong>, ולבתי המשפט המוסמכים בישראל הסמכות לדון בכל מחלוקת לגביהם.</p>
+<p><strong>עם זאת</strong>, אם את/ה צרכן/ית שגר/ה במדינה אחרת, אין בכך כדי לשלול את ההגנה של דיני הגנת הצרכן הקוגנטיים של מדינת מגוריך, וייתכן שתוכל/י להגיש תביעה גם בבתי המשפט במדינתך, אם הדין שם מאפשר זאת.</p>
+<h2>17. יצירת קשר</h2>
+<p>שאלות, בעיות או בקשות בנוגע למשחק או לתנאים:</p>
+<ul><li><strong>ramicoapps@gmail.com</strong></li></ul>
+<h2>מקורות</h2>
+<ul><li>חוק הגנת הצרכן, התשמ"א-1981 (נבו): <a href="https://www.nevo.co.il/law_html/law01/089_001.htm" rel="noopener">https://www.nevo.co.il/law_html/law01/089_001.htm</a></li><li>Google Play – מדיניות ההחזרים: <a href="https://support.google.com/googleplay/answer/2479637" rel="noopener">https://support.google.com/googleplay/answer/2479637</a></li><li>Apple – בקשת החזר: <a href="https://support.apple.com/en-us/118223" rel="noopener">https://support.apple.com/en-us/118223</a></li></ul>
+<h2>מסמכים משפטיים</h2>
+<ul><li><a href="/cipher-worlds/he/privacy/">מדיניות פרטיות</a></li><li><a href="/cipher-worlds/he/terms/">תנאי שימוש</a></li><li><a href="/cipher-worlds/he/refunds/">ביטולים והחזרים</a></li><li><a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a></li><li><a href="/cipher-worlds/he/minors/">קטינים והורים</a></li><li><a href="/cipher-worlds/he/licenses/">רישיונות וקרדיטים</a></li></ul>
+</article>
+<footer>
+<div class="wrap">
+<a class="brand" href="/" aria-label="RamiCoApps, לעמוד הבית"><svg width="22" height="28" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+<div class="fl"><a href="/cipher-worlds/he/">מסמכים משפטיים</a><a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a><span>תמיכה: <a href="mailto:ramicoapps@gmail.com" dir="ltr">ramicoapps@gmail.com</a></span><span dir="ltr">© 2026 RamiCoApps</span></div>
+</div>
+</footer>
+</body>
+</html>

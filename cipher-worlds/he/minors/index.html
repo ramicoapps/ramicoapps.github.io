@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קטינים והורים · Cipher Worlds: Morse · RamiCoApps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Outfit:wght@500;800&display=swap"
+/>
+<style>
+  :root {
+    --night: #0b1226;
+    --paper: #ffffff;
+    --ink: #141a2e;
+    --soft: #5b6378;
+    --blue: #3b82f6;
+    --spark: #fbbf24;
+    --cream: #fbf6ec;
+    --head: 'Heebo', system-ui, sans-serif;
+    --body: 'Heebo', system-ui, sans-serif;
+    --logo: 'Outfit', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  a {
+    color: var(--blue);
+  }
+  a:focus-visible {
+    outline: 3px solid var(--spark);
+    outline-offset: 3px;
+  }
+  h1,
+  h2 {
+    font-family: var(--head);
+    margin: 0;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  p {
+    margin: 0;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .nav {
+    background: var(--night);
+  }
+  .nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 76px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    direction: ltr;
+    color: #fff;
+  }
+  .word {
+    font-family: var(--logo);
+    font-size: 22px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .word b {
+    font-weight: 800;
+  }
+  .word i {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--spark);
+  }
+  .links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+  }
+  .links a:hover {
+    opacity: 1;
+    color: var(--spark);
+  }
+  .doc {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 24px 90px;
+  }
+  .doc .back {
+    color: var(--soft);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .doc h1 {
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 900;
+    margin-top: 18px;
+  }
+  .doc .updated {
+    color: var(--soft);
+    font-size: 15px;
+    margin-top: 6px;
+  }
+  .doc .note {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin-top: 18px;
+  }
+  .doc h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 34px 0 8px;
+  }
+  .doc p + p {
+    margin-top: 12px;
+  }
+  .doc ul {
+    padding-inline-start: 22px;
+    margin: 16px 0;
+  }
+  .doc li + li {
+    margin-top: 6px;
+  }
+  .doc a {
+    overflow-wrap: anywhere;
+  }
+  footer {
+    background: var(--night);
+    color: #c9d3ea;
+    padding: 40px 0;
+    font-size: 15px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--spark);
+  }
+  footer .fl {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 480px) {
+    .wrap {
+      padding: 0 16px;
+    }
+    .links {
+      gap: 16px;
+    }
+    .word {
+      font-size: 19px;
+    }
+    .doc {
+      padding: 36px 16px 72px;
+    }
+  }
+</style>
+<style>.nav{position:sticky;top:0;z-index:20}html{scroll-padding-top:84px}.nav .wrap{padding-top:12px;padding-bottom:12px}@media (max-width:480px){.nav .wrap{padding-top:16px;row-gap:12px}html{scroll-padding-top:120px}}
+.doc h3{font-size:18px;font-weight:800;margin:24px 0 6px}
+.doc ol{padding-inline-start:22px;margin:16px 0}.doc ol li+li{margin-top:6px}
+.doc .table{overflow-x:auto;margin:16px 0}.doc table{border-collapse:collapse;width:100%;font-size:15px}
+.doc th,.doc td{border:1px solid #E3E7F0;padding:8px 10px;text-align:start;vertical-align:top}
+.doc th{background:var(--cream)}.doc code{font-size:.9em;background:var(--cream);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <symbol id="tileR" viewBox="15.5 6.5 69 87">
+    <rect x="15.5" y="6.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="33.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="51.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="15.5" y="24.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="69.5" y="24.5" width="15" height="15" rx="4" fill="#EC4899" />
+    <rect x="15.5" y="42.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="33.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="51.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="15.5" y="60.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="51.5" y="60.5" width="15" height="15" rx="4" fill="#F59E0B" />
+    <rect x="15.5" y="78.5" width="15" height="15" rx="4" fill="#3B82F6" />
+    <rect x="69.5" y="78.5" width="15" height="15" rx="4" fill="#FBBF24" />
+  </symbol>
+</svg>
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="/" aria-label="RamiCoApps, לעמוד הבית"><svg width="24" height="30" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+<nav class="links" aria-label="ניווט"><a href="/#app-cipher-worlds">האפליקציות</a><a href="/cipher-worlds/he/privacy/">פרטיות</a><a href="/cipher-worlds/he/terms/">תנאי שימוש</a><a href="/cipher-worlds/en/minors/" lang="en">English</a></nav>
+</div>
+</header>
+<article class="doc">
+<a class="back" href="/cipher-worlds/he/">← למסמכים של Cipher Worlds</a>
+<h1>קטינים והורים</h1>
+<p class="updated">עודכן ב-8.11.2026</p>
+<p><strong>גרסה 1.0 · בתוקף מתאריך: 8.11.2026</strong></p>
+<p>הדף הזה מיועד להורים ולאפוטרופוסים. הוא מסביר איך <strong>Cipher Worlds: Morse</strong> מתייחס לילדים, מה אנחנו אוספים ומה לא, איך עובדות הפרסומות לשחקנים צעירים, ואיך אפשר לשלוט ברכישות ולמחוק מידע. הוא משלים את <a href="/cipher-worlds/he/privacy/">מדיניות הפרטיות</a>.</p>
+<p>את המשחק פיתח רמי כהן, עוסק פטור בישראל, בשם המסחרי <strong>RamiCoApps</strong>. יצירת קשר: <strong>ramicoapps@gmail.com</strong>.</p>
+<h2>1. למי המשחק מיועד</h2>
+<p>‏Cipher Worlds: Morse מלמד קוד מורס ומיועד ל<strong>קהל מעורב</strong>: ילדים ומבוגרים. מכיוון שגם ילדים משחקים בו, תכננו אותו כך שיאסוף כמה שפחות מידע מכל השחקנים.</p>
+<h2>2. מסך גיל ניטרלי</h2>
+<p>בהפעלה הראשונה של המשחק – לפני שמתבקשת פרסומת כלשהי – הוא שואל <strong>"באיזו שנה נולדת?"</strong> ומציג רשימת שנים.</p>
+<ul><li>אין שנה שנבחרת מראש, המסך לא רומז על מגבלת גיל, ושום תשובה לא נותנת פרס או פותחת משהו.</li><li>המשחק שומר במכשיר רק את <strong>קבוצת הגיל</strong>: <strong>מתחת ל-13</strong>, <strong>13–15</strong> או <strong>16 ומעלה</strong>. שנת הלידה לא נשמרת ולא נשלחת לשום מקום.</li><li>אם לא עונים על השאלה, המשחק לא מבקש פרסומות.</li><li>אי אפשר לשנות את קבוצת הגיל בתוך המשחק, אלא דרך <strong>הגדרות ← איפוס מלא</strong>, שמוחק את ההתקדמות ושואל שוב.</li></ul>
+<h2>3. מה מקבלים שחקנים צעירים</h2>
+<div class="table"><table><thead><tr><th>קבוצת גיל</th><th>פרסומות</th></tr></thead><tbody><tr><td>מתחת ל-13</td><td>בקשות הפרסום מסומנות כ<strong>מכוונות לילדים</strong> וכ<strong>מתחת לגיל ההסכמה</strong>; רק פרסומות בדירוג <strong>G</strong> ו<strong>לא מותאמות אישית</strong>.</td></tr><tr><td>13–15</td><td>בקשות הפרסום מסומנות כ<strong>מתחת לגיל ההסכמה</strong>; רק פרסומות בדירוג <strong>G</strong> ו<strong>לא מותאמות אישית</strong>.</td></tr><tr><td>16 ומעלה</td><td>פרסומות בדירוג G; מותאמות אישית רק כשכלי ההסכמה של Google מאפשרים זאת, אחרת לא מותאמות אישית.</td></tr></tbody></table></div>
+<p>"לא מותאמות אישית" פירושו שהפרסומות לא מבוססות על ההתנהגות הקודמת של השחקן. הפרסומות מסופקות על ידי <strong>Google AdMob</strong>, שמופיע ב-Google Play ברשימת ה-SDK לפרסום שאושרו בהצהרה עצמית לתוכנית Families. ‏Google עדיין מקבלת מידע טכני מסוים (כמו כתובת IP ומידע על המכשיר) כשמוצגת פרסומת, לצורך הצגה, מדידה ומניעת הונאות – ראו סעיף 5 במדיניות הפרטיות.</p>
+<p>פרסומות מוצגות בין חלק מהשלבים (אף פעם לא למי שרכש Premium). פרסומות עם פרס הן לבחירת השחקן: הוא מחליט אם לצפות בפרסומת כדי לקבל רמז, תיבה או ניסיונות נוספים.</p>
+<h2>4. מה אין במשחק</h2>
+<ul><li><strong>אין חשבונות</strong> ואין הרשמה. המשחק לא מבקש שם, דוא"ל, טלפון, כתובת, תמונה או מיקום, ולא משתמש במצלמה או במיקרופון.</li><li><strong>אין צ'אט</strong>, אין הודעות, אין תוכן שמשתמשים יוצרים ואין שיתוף בין שחקנים.</li><li><strong>אין רשימות חברים אמיתיות</strong> – החברים של פיפ הם דמויות בסיפור.</li><li>אין תחרויות עם פרסים אמיתיים ואין מנויים.</li><li>אין כלי אנליטיקה או דיווח קריסות, ואין לנו שרת. ההתקדמות נשארת במכשיר.</li></ul>
+<p>החיבור האופציונלי היחיד לחשבון מקוון הוא שמירת משחק ב-<strong>Google Play Games</strong> ב-Android, וזה קורה רק אם השחקן בוחר להתחבר (ראו סעיף 7 במדיניות הפרטיות). האפשרות הזו לא מוצעת לשחקנים מתחת לגיל 13: ההתקדמות שלהם נשארת במכשיר (קובצי גיבוי עדיין עובדים).</p>
+<h2>5. רכישות, ואיך למנוע רכישה בטעות</h2>
+<p>המשחק מוכר, דרך החנויות בלבד, שדרוג <strong>Premium</strong> חד-פעמי וחבילות של <strong>רמזים, מטבעות ויהלומים</strong>. מטבעות ויהלומים הם וירטואליים, אין להם ערך כספי, וכל מה שיש במשחק אפשר להשיג גם במשחק עצמו. כל התשלומים עוברים דרך Google Play או Apple, ואנחנו אף פעם לא רואים את פרטי התשלום.</p>
+<p>בחנות יש גם <strong>תיבות הפתעה</strong>: פריט קוסמטי אקראי תמורת מטבעות או יהלומים. הסיכוי לכל דרגת נדירות מוצג לפני פתיחת התיבה, והפריטים משנים רק את המראה. מכיוון שאפשר לקנות יהלומים בכסף, כדאי לדבר על התיבות עם הילד ולהשתמש בהגדרות הרכישה שמתוארות למטה.</p>
+<p>אנחנו ממליצים להורים להפעיל את כלי הבקרה של החנויות:</p>
+<p><strong>Google Play ‏(Android)</strong></p>
+<ul><li><strong>אימות רכישות:</strong> בהגדרות של חנות Play פותחים את _אימות רכישות_ ובוחרים לדרוש אימות לכל רכישה. התפריט והאפשרויות משתנים לפי אזור. ראו <a href="https://support.google.com/googleplay/answer/1626831" rel="noopener">אימות רכישות ב-Google Play</a>.</li><li><strong>Family Link:</strong> אם החשבון של הילד מנוהל ב-Family Link, אפשר לדרוש את אישורך לרכישות (כל התוכן, תוכן בתשלום, או רכישות בתוך אפליקציות בלבד). ראו <a href="https://support.google.com/families/answer/7039872" rel="noopener">אישורי רכישה ב-Google Play</a>.</li></ul>
+<p><strong>Apple ‏(iPhone/iPad)</strong></p>
+<ul><li><strong>Ask to Buy ‏(בקשה לקנייה):</strong> עם שיתוף משפחתי (Family Sharing), מארגן המשפחה או הורה/אפוטרופוס יכולים לדרוש אישור לרכישות של הילד. ראו <a href="https://support.apple.com/en-us/105055" rel="noopener">Ask to Buy</a>.</li><li><strong>זמן מסך (Screen Time):</strong> אפשר לחסום רכישות בתוך אפליקציות ב*הגדרות ← זמן מסך* (התפריט המדויק תלוי בגרסת iOS). ראו <a href="https://support.apple.com/en-us/102470" rel="noopener">ביטול רכישות בתוך אפליקציות עם זמן מסך</a>.</li></ul>
+<p><strong>החזרים.</strong> החזרים מטופלים על ידי החנות שחייבה אותך (Google Play, או "Report a Problem" של Apple). ב-Google Play, למשל, אפשר לבקש החזר ישירות תוך זמן מוגבל אחרי הרכישה – ראו <a href="https://support.google.com/googleplay/answer/15574897" rel="noopener">בקשת החזר ב-Google Play</a>. אנחנו לא יכולים להחזיר בעצמנו כסף שגבתה החנות, אבל אפשר לכתוב לנו ונעזור – למשל אם רכישה לא התקבלה במשחק.</p>
+<h2>6. חוקים וכללי חנויות שאנחנו מתחשבים בהם</h2>
+<p>כאן מתואר איך אנחנו ניגשים לכללים האלה. אין זו הצהרה שרגולטור או חנות בדקו את המשחק או אישרו אותו.</p>
+<ul><li><strong>ארה"ב – COPPA.</strong> כלל הגנת הפרטיות של ילדים ברשת (16 CFR Part 312) מגן על ילדים מתחת לגיל 13. ה-FTC תיקן את הכלל ב-2025 (פורסם ב-Federal Register ב-22 באפריל 2025), והתיקונים כוללים דרישה להסכמת הורים נפרדת למסירת מידע של ילדים לצדדים שלישיים לצורך פרסום ממוקד. הגישה שלנו: המשחק לא מבקש מילדים מידע אישי; יש בו מסך גיל ניטרלי; לשחקנים מתחת ל-13 הפרסומות מתבקשות כמכוונות לילדים ולא מותאמות אישית, כך שאינן ממוקדות. אנחנו עצמנו לא אוספים מידע אישי מילדים.</li><li><strong>האיחוד האירופי ובריטניה – GDPR.</strong> לפי סעיף 8 ל-GDPR, כששירות מקוון נשען על הסכמה, הסכמה של ילד תקפה מגיל 16, וכל מדינה באיחוד רשאית לקבוע גיל נמוך יותר, אבל לא פחות מ-13. בבריטניה הגיל הוא 13. מכיוון שהגיל שונה ממדינה למדינה, המשחק מתייחס לכל שחקן מתחת לגיל 16 כמי שמתחת לגיל ההסכמה, ומציג לו רק פרסומות לא מותאמות אישית; הוא לא מבקש מילדים הסכמה לפרסומות מותאמות.</li><li><strong>ישראל – חוק הגנת הפרטיות, התשמ"א-1981</strong> (כולל תיקון 13). בחוק אין גיל הסכמה מיוחד לילדים; הורים ואפוטרופוסים רשאים לפעול בשם ילדיהם לפי הדין הכללי.</li><li><strong>Google Play – מדיניות Families.</strong> אפליקציה שקהל היעד שלה כולל ילדים חייבת לעמוד במדיניות Families של Google Play. באפליקציה לקהל מעורב זה כולל מסך גיל ניטרלי, פרסומות לילדים רק מ-SDK שאושרו בהצהרה עצמית לתוכנית Families, איסור על פרסומות מותאמות אישית או מבוססות תחומי עניין לילדים, ואיסור לשדר את מזהה הפרסום ומזהים דומים מילדים או ממשתמשים שגילם לא ידוע.</li><li><strong>Apple – App Store.</strong> מכיוון שהמשחק מיועד לקהל מעורב ולא רק לילדים, אנחנו לא מציגים אותו בקטגוריית <strong>Kids</strong> של ה-App Store. הנחיה 5.1.4 של Apple עדיין מחייבת אפליקציות שילדים עשויים להשתמש בהן לעמוד בחוקי הפרטיות של ילדים, ואנחנו שואפים לעשות זאת כמתואר למעלה.</li></ul>
+<h2>7. הזכויות שלך כהורה</h2>
+<p>אפשר לפנות אלינו בכתובת <strong>ramicoapps@gmail.com</strong> כדי לשאול איזה מידע על ילדך נמצא אצלנו, או לבקש לתקן או למחוק אותו. מכיוון שהמשחק שומר את המידע של ילדך <strong>רק במכשיר</strong>, ואין לנו חשבונות או שרת, בדרך כלל אין אצלנו מידע על ילדך. נגיד לך זאת ונעזור לך להשתמש בצעדים שבהמשך.</p>
+<p>אפשר גם להגיש תלונה לרשות להגנת מידע – בישראל, לרשות להגנת הפרטיות; באזור הכלכלי האירופי, לרשות הלאומית; בבריטניה, ל-ICO; בארה"ב, ל-Federal Trade Commission.</p>
+<h2>8. איך לאפס או למחוק את המידע של ילדך</h2>
+<ul><li><strong>במכשיר – הגדרות ← איפוס:</strong><ul><li>_איפוס התקדמות_ – מוחק את ההתקדמות;</li><li>_איפוס הגדרות_ – מוחק את ההגדרות;</li><li>_איפוס מלא_ – מוחק את כל ההתקדמות וההגדרות, כולל קבוצת הגיל, ומתחיל מחדש עם שאלת הגיל. רישום הרכישות נשמר, כדי ש-Premium ימשיך לעבוד.</li></ul></li><li><strong>הסרת המשחק</strong> מוחקת את כל מסד הנתונים המקומי.</li><li><strong>Google Play Games</strong> (אם ילדך התחבר): מוחקים את הנתונים השמורים של המשחק בהגדרות של Play Games או בכתובת play.google.com/games/profile – ראו <a href="https://support.google.com/googleplay/answer/9130646" rel="noopener">מחיקת נתוני Play Games</a>.</li><li><strong>קובצי גיבוי:</strong> מוחקים כל קובץ גיבוי שיוצא, מהמקום שבו נשמר.</li><li><strong>נתוני פרסום אצל Google:</strong> מאפסים או מוחקים את מזהה הפרסום של המכשיר, ומשתמשים בהגדרות הפרסום של Google – ראו <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">איך Google משתמשת במידע מאפליקציות שמשתמשות בשירותים שלה</a>.</li></ul>
+<h2>9. שאלות</h2>
+<p>כותבים אל <strong>ramicoapps@gmail.com</strong>. נענה בהקדם האפשרי.</p>
+<h3>מקורות</h3>
+<ul><li>‏FTC – כלל COPPA – <a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" rel="noopener">https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa</a></li><li>‏FTC – תיקוני הכלל, 16 CFR Part 312 ‏(2025) – <a href="https://www.ftc.gov/legal-library/browse/federal-register-notices/16-cfr-part-312-coppa-final-rule-amendments" rel="noopener">https://www.ftc.gov/legal-library/browse/federal-register-notices/16-cfr-part-312-coppa-final-rule-amendments</a></li><li>‏Federal Register, ‏22 באפריל 2025, מסמך 2025-05904 – <a href="https://www.federalregister.gov/documents/2025/04/22/2025-05904/childrens-online-privacy-protection-rule" rel="noopener">https://www.federalregister.gov/documents/2025/04/22/2025-05904/childrens-online-privacy-protection-rule</a></li><li>‏eCFR – ‏16 CFR Part 312 – <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312" rel="noopener">https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312</a></li><li>‏GDPR (תקנה (EU) 2016/679), סעיף 8 – <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" rel="noopener">https://eur-lex.europa.eu/eli/reg/2016/679/oj</a></li><li>מדיניות Families של Google Play – <a href="https://support.google.com/googleplay/android-developer/answer/9893335" rel="noopener">https://support.google.com/googleplay/android-developer/answer/9893335</a></li><li>תוכנית Families Self-Certified Ads SDK – <a href="https://support.google.com/googleplay/android-developer/answer/12955712" rel="noopener">https://support.google.com/googleplay/android-developer/answer/12955712</a></li><li>‏AdMob: עמידה במדיניות Families – <a href="https://support.google.com/admob/answer/6223431" rel="noopener">https://support.google.com/admob/answer/6223431</a></li><li>אימות רכישות ב-Google Play – <a href="https://support.google.com/googleplay/answer/1626831" rel="noopener">https://support.google.com/googleplay/answer/1626831</a></li><li>אישורי רכישה ב-Google Play ‏(Family Link) – <a href="https://support.google.com/families/answer/7039872" rel="noopener">https://support.google.com/families/answer/7039872</a></li><li>החזרים ב-Google Play – <a href="https://support.google.com/googleplay/answer/15574897" rel="noopener">https://support.google.com/googleplay/answer/15574897</a></li><li>‏Apple – ‏Ask to Buy – <a href="https://support.apple.com/en-us/105055" rel="noopener">https://support.apple.com/en-us/105055</a></li><li>‏Apple – ביטול רכישות בתוך אפליקציות עם זמן מסך – <a href="https://support.apple.com/en-us/102470" rel="noopener">https://support.apple.com/en-us/102470</a></li><li>הנחיות הבדיקה של App Store ‏(1.3, ‏5.1.4) – <a href="https://developer.apple.com/app-store/review/guidelines/" rel="noopener">https://developer.apple.com/app-store/review/guidelines/</a></li><li>מחיקת נתוני Play Games – <a href="https://support.google.com/googleplay/answer/9130646" rel="noopener">https://support.google.com/googleplay/answer/9130646</a></li><li>חוק הגנת הפרטיות (תרגום לא רשמי לאנגלית, לאחר תיקון 13) – <a href="https://www.gov.il/BlobFolder/legalinfo/legislation/en/Protection-of-Privacy-Law57411981unofficialtranslatioup.pdf" rel="noopener">https://www.gov.il/BlobFolder/legalinfo/legislation/en/Protection-of-Privacy-Law57411981unofficialtranslatioup.pdf</a></li></ul>
+<h2>מסמכים משפטיים</h2>
+<ul><li><a href="/cipher-worlds/he/privacy/">מדיניות פרטיות</a></li><li><a href="/cipher-worlds/he/terms/">תנאי שימוש</a></li><li><a href="/cipher-worlds/he/refunds/">ביטולים והחזרים</a></li><li><a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a></li><li><a href="/cipher-worlds/he/minors/">קטינים והורים</a></li><li><a href="/cipher-worlds/he/licenses/">רישיונות וקרדיטים</a></li></ul>
+</article>
+<footer>
+<div class="wrap">
+<a class="brand" href="/" aria-label="RamiCoApps, לעמוד הבית"><svg width="22" height="28" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+<div class="fl"><a href="/cipher-worlds/he/">מסמכים משפטיים</a><a href="/cipher-worlds/he/accessibility/">הצהרת נגישות</a><span>תמיכה: <a href="mailto:ramicoapps@gmail.com" dir="ltr">ramicoapps@gmail.com</a></span><span dir="ltr">© 2026 RamiCoApps</span></div>
+</div>
+</footer>
+</body>
+</html>
