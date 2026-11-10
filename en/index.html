@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RamiCoApps</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="he" href="https://ramicoapps.github.io/">
+<link rel="alternate" hreflang="en" href="https://ramicoapps.github.io/en/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Outfit:wght@500;800&display=swap">
+<style>
+/* Layout idea: a full-bleed night hero with drifting tiles, then one wide colored band per app (Leap-style), alternating backgrounds. Single fixed visual world. */
+:root{
+  --night:#0B1226;
+  --band:#4B5487;
+  --cream:#FBF6EC;
+  --paper:#FFFFFF;
+  --ink:#141A2E;
+  --soft:#5B6378;
+  --blue:#3B82F6;
+  --pink:#EC4899;
+  --orange:#F59E0B;
+  --spark:#FBBF24;
+  --head:"Heebo",system-ui,sans-serif;
+  --body:"Heebo",system-ui,sans-serif;
+  --logo:"Outfit",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+a:focus-visible{outline:3px solid var(--spark);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.15;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+mark{background:#FEF3C7;color:#92400E;border-radius:4px;padding:0 4px}
+
+/* nav */
+.nav{position:fixed;top:0;inset-inline:0;z-index:20;background:var(--night)}
+html{scroll-padding-top:84px}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;direction:ltr;color:#fff}
+.word{font-family:var(--logo);font-size:22px;line-height:1;white-space:nowrap}
+.word b{font-weight:800}.word i{font-style:normal;font-weight:500;color:var(--spark)}
+.links{display:flex;gap:26px;flex-wrap:wrap}
+.links a{color:#fff;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.5px;opacity:.9}
+.links a:hover{opacity:1;color:var(--spark)}
+.lang{display:inline-flex;direction:ltr;border:1px solid rgba(255,255,255,.4);border-radius:8px;overflow:hidden}
+.links .lang a{padding:0 9px;opacity:1;letter-spacing:1px}
+.links .lang a[aria-current]{background:var(--spark);color:var(--night)}
+.solid{position:static;background:var(--night)}
+
+/* hero */
+.hero{position:relative;background:radial-gradient(120% 90% at 50% 120%,#1E3A8A 0%,#0F1E4A 35%,var(--night) 70%);color:#fff;overflow:hidden;text-align:center}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:relative;padding:150px 24px 130px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero .logo{width:92px;height:92px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.hero h1{font-size:clamp(34px,5.4vw,60px);font-weight:900;letter-spacing:.5px}
+.hero h1 span{display:block;font-family:var(--logo);direction:ltr;font-weight:800;letter-spacing:2px}
+.hero p{font-size:clamp(16px,1.6vw,19px);color:#C9D3EA;max-width:36em}
+
+/* why */
+.why{padding:80px 0;text-align:center}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--soft)}
+.why h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;margin:8px auto 40px;max-width:18em}
+.points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;text-align:center}
+.point{display:flex;flex-direction:column;align-items:center;gap:10px}
+.point .t{width:56px;height:56px;border-radius:16px}
+.point h3{font-size:21px;font-weight:800}
+.point p{color:var(--soft);font-size:16px;max-width:22em}
+
+/* app band */
+.band{padding:84px 0;background:var(--band);color:#fff;overflow:hidden}
+.band.cream{background:var(--cream);color:var(--ink)}
+.band-title{text-align:center;margin-bottom:48px}
+.band-title .eyebrow{color:#D5D9F0}
+.band.cream .band-title .eyebrow{color:var(--soft)}
+.band-title h2{font-size:clamp(30px,4.2vw,46px);font-weight:900;margin-top:6px}
+.app-row{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.app-id{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.app-id img{width:76px;height:76px;border-radius:20px;background:#fff;padding:6px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.app-id h3{font-size:34px;font-weight:900;line-height:1}
+.app-id small{display:block;font-size:15px;font-weight:500;opacity:.85;margin-top:6px}
+.app-copy p{font-size:17px;opacity:.92;max-width:34em}
+.app-copy p+p{margin-top:14px}
+.ticks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px}
+.ticks li{display:flex;gap:10px;align-items:baseline;font-weight:500}
+.ticks li::before{content:"";flex:none;width:11px;height:11px;border-radius:3px;background:var(--spark);transform:translateY(-1px)}
+.stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.store{display:inline-flex;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:10px;background:#000;color:#fff;border:1.5px solid #8C93A8;text-decoration:none;direction:ltr;font-family:var(--logo);line-height:1.1}
+.store small{font-size:11px;font-weight:500}
+.store span{font-size:20px;font-weight:500}
+.linkhint{font-size:14px;margin-top:10px;opacity:.85}
+.phone-wrap{display:flex;justify-content:center;position:relative}
+.phone-wrap::before{content:"";position:absolute;width:340px;height:340px;border-radius:60px;background:rgba(251,191,36,.9);transform:rotate(12deg);top:22%;z-index:0}
+.phone{position:relative;z-index:1;width:260px;border-radius:40px;padding:10px;background:#1B2034;box-shadow:0 40px 70px rgba(0,0,0,.4);transform:rotate(-5deg)}
+.phone img{border-radius:31px;width:100%;height:auto}
+
+.more{margin-top:56px;border-top:1px solid rgba(255,255,255,.18);padding-top:28px}
+.more h4{margin:0 0 16px;font-size:15px;letter-spacing:2px;font-weight:800;text-align:center}
+.strip{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 8px;justify-content:center}
+.strip img{flex:none;width:150px;height:auto;border-radius:18px;border:4px solid rgba(255,255,255,.25)}
+
+.soon .app-row{grid-template-columns:1fr}
+.soon .band-title{margin-bottom:0}
+.soon-card{border:2px dashed #D9CDB3;border-radius:24px;padding:36px;text-align:center;color:var(--soft);display:flex;flex-direction:column;align-items:center;gap:12px}
+.soon-card .tiles{display:flex;gap:8px}.soon-card .tiles span{width:22px;height:22px;border-radius:6px;background:#E8DCC2}
+
+/* about */
+.about{padding:80px 0;text-align:center}
+.about h2{font-size:clamp(28px,3.6vw,40px);font-weight:900;margin:8px 0 18px}
+.about p{color:var(--soft);max-width:38em;margin:0 auto}
+
+/* the app's documents */
+.doclinks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:15px}
+.doclinks a{color:#fff;opacity:.92}
+.doclinks a:hover{color:var(--spark);opacity:1}
+.band.cream .doclinks a{color:var(--ink);opacity:1}.band.cream .doclinks a:hover{color:var(--blue)}
+.swap-shot{flex:none;padding:0;border:0;background:none;cursor:pointer;border-radius:22px;transition:transform .15s ease-out}.swap-shot:hover{transform:translateY(-3px)}.swap-shot:focus-visible{outline:3px solid var(--ink);outline-offset:3px}.phone img{transition:opacity .18s ease-out}
+.band.cream .more{border-top-color:rgba(20,26,46,.14)}.band.cream .strip img{border-color:rgba(20,26,46,.12)}
+.soon-store{opacity:.6}
+
+/* legal pages */
+.view{display:none}.view.on{display:block}
+.doc{max-width:740px;margin:0 auto;padding:48px 24px 90px}
+.doc .back{color:var(--soft);text-decoration:none;font-size:15px}
+.doc h1{font-size:clamp(34px,5vw,48px);font-weight:900;margin-top:18px}
+.doc .updated{color:var(--soft);font-size:15px;margin-top:6px}
+.doc h2{font-size:22px;font-weight:800;margin:34px 0 8px}
+.doc p+p{margin-top:12px}
+.doc ul{padding-inline-start:22px;margin:10px 0}
+
+footer{background:var(--night);color:#C9D3EA;padding:40px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer a{color:#fff;text-decoration:none}
+footer a:hover{color:var(--spark)}
+footer .fl{display:flex;gap:22px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .points{grid-template-columns:1fr}
+  .app-row{grid-template-columns:1fr;gap:48px}
+  .phone{width:220px}.phone-wrap::before{width:260px;height:260px}
+  .hero .in{padding:130px 16px 100px}
+}
+@media (max-width:480px){.wrap{padding:0 16px}.nav .wrap{padding-top:16px;padding-bottom:12px;row-gap:12px}html{scroll-padding-top:120px}.links{gap:16px}.word{font-size:19px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tileR" viewBox="15.5 6.5 69 87">
+    <rect x="15.5" y="6.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="33.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899"/><rect x="51.5" y="6.5" width="15" height="15" rx="4" fill="#EC4899"/>
+    <rect x="15.5" y="24.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="69.5" y="24.5" width="15" height="15" rx="4" fill="#EC4899"/>
+    <rect x="15.5" y="42.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="33.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B"/><rect x="51.5" y="42.5" width="15" height="15" rx="4" fill="#F59E0B"/>
+    <rect x="15.5" y="60.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="51.5" y="60.5" width="15" height="15" rx="4" fill="#F59E0B"/>
+    <rect x="15.5" y="78.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="69.5" y="78.5" width="15" height="15" rx="4" fill="#FBBF24"/>
+  </symbol>
+</svg>
+
+<!-- HOME -->
+<div class="view on" id="v-home">
+  <header class="nav" dir="rtl">
+    <div class="wrap">
+      <a class="brand" href="/en/" aria-label="RamiCoApps, home page"><svg width="24" height="30" aria-hidden="true"><use href="#tileR"/></svg><span class="word"><b>RamiCo</b><i>Apps</i></span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#app-mishmeret">Apps</a>
+        <a href="#about">About</a>
+        <a href="/en/privacy/">Privacy</a>
+        <a href="/en/accessibility/">Accessibility</a>
+        <span class="lang" role="group" aria-label="Language / שפה"><a href="/" lang="he">HE</a><a href="/en/" lang="en" aria-current="page">EN</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Introduction">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="in">
+      <div class="logo"><svg width="46" height="58" aria-hidden="true"><use href="#tileR"/></svg></div>
+      <h1><span>RAMICOAPPS</span>Smart apps for everyday life</h1>
+      <p>Small, useful tools in several languages, with a simple, friendly interface.</p>
+    </div>
+  </section>
+
+  <section class="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <p class="eyebrow">Why RamiCoApps?</p>
+      <h2 id="why-h">Simple tools for the things that matter to you</h2>
+      <div class="points">
+        <div class="point"><span class="t" style="background:var(--blue)" aria-hidden="true"></span><h3>In your language</h3><p>The apps come in several languages, including right-to-left Hebrew.</p></div>
+        <div class="point"><span class="t" style="background:var(--pink)" aria-hidden="true"></span><h3>Easy to start</h3><p>One tap and you are in. No long forms and no unnecessary screens.</p></div>
+        <div class="point"><span class="t" style="background:var(--orange)" aria-hidden="true"></span><h3>Easy on the eyes</h3><p>Dark and light modes, and large buttons that are easy to tap, even in the middle of a shift.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="app-mishmeret" aria-labelledby="m-h">
+    <div class="wrap">
+      <div class="band-title">
+        <p class="eyebrow">Shifts and pay</p>
+        <h2 id="m-h">Keep track of your pay, easily</h2>
+      </div>
+      <div class="app-row">
+        <div class="app-copy">
+          <div class="app-id">
+            <img src="/img/mishmeret-icon.png" alt="" width="76" height="76">
+            <h3>Mishmeret<small>Shift tracker and pay calculator</small></h3>
+          </div>
+          <p>Mishmeret counts your working hours for you. Tap "Start shift" when your workday begins, and it works out your hours, your gross pay and your estimated net pay.</p>
+          <p>At the end of the month, compare the calculated pay with your payslip and check that you were paid in full. You can manage several workplaces, log vacation, sick days and holidays, and get shift reminders.</p>
+          <ul class="ticks">
+            <li>Gross and estimated net pay against a monthly goal</li>
+            <li>Payslip comparison and report export</li>
+            <li>7 languages, dark and light modes</li>
+          </ul>
+          <div class="stores">
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.ramicoapps.mishmeret" aria-label="Get it on Google Play"><small>GET IT ON</small><span>Google Play</span></a>
+            <span class="store soon-store" aria-label="App Store, coming soon"><small>Coming soon</small><span>App Store</span></span>
+          </div>
+          <p class="linkhint">Mishmeret calculates pay under Israeli rules and is available in Israel. The calculation is an estimate only. It is not a payslip, and it is not legal, tax or financial advice.</p>
+          <nav class="doclinks" aria-label="Mishmeret documents">
+            <a href="/mishmeret/en/privacy/">Privacy policy</a>
+            <a href="/mishmeret/en/terms/">Terms of use</a>
+            <a href="/mishmeret/en/accessibility/">Accessibility statement</a>
+            <a href="/mishmeret/en/licenses/">Open-source licenses</a>
+            <a href="/mishmeret/he/" lang="he">עברית</a>
+          </nav>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone"><img src="/img/m-home.jpg" alt="Mishmeret home screen, in Hebrew: 83.5% monthly progress and the Start shift button" width="420" height="845"></div>
+        </div>
+      </div>
+      <div class="more" id="mishmeret">
+        <h4>More screens</h4>
+        <div class="strip">
+          <button type="button" class="swap-shot" aria-label="Show this screen on the phone"><img src="/img/m-shifts.jpg" alt="The list of shifts for the month" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="Show this screen on the phone"><img src="/img/m-add.jpg" alt="Adding a shift, vacation, sick day or holiday" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="Show this screen on the phone"><img src="/img/m-chart.jpg" alt="Chart of hours by month" width="420" height="845" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="app-cipher-worlds" aria-labelledby="cw-h">
+    <div class="wrap">
+      <div class="band-title">
+        <p class="eyebrow">A game for the whole family</p>
+        <h2 id="cw-h">Learn Morse code by playing</h2>
+      </div>
+      <div class="app-row">
+        <div class="app-copy">
+          <div class="app-id">
+            <img src="/img/cipher-worlds-icon.png" alt="" width="76" height="76">
+            <h3>Cipher Worlds: Morse<small>A game for learning Morse code</small></h3>
+          </div>
+          <p>Pip sets out on a journey through ten worlds, and every level teaches more Morse code letters: listen to signals, decode messages and send your own.</p>
+          <p>Along the way you collect stars and items, build Pip's world and meet new friends. You can learn Hebrew Morse or International Morse.</p>
+          <ul class="ticks">
+            <li>Ten worlds with a story</li>
+            <li>Hebrew Morse and International Morse</li>
+            <li>In Hebrew and English</li>
+          </ul>
+          <div class="stores">
+            <span class="store soon-store" aria-label="Google Play, coming soon"><small>Coming soon</small><span>Google Play</span></span>
+            <span class="store soon-store" aria-label="App Store, coming soon"><small>Coming soon</small><span>App Store</span></span>
+          </div>
+          <p class="linkhint">The game contains ads and in-game purchases. It is made for children and adults, and players under 13 see only non-personalized ads.</p>
+          <nav class="doclinks" aria-label="Cipher Worlds documents">
+            <a href="/cipher-worlds/en/privacy/">Privacy policy</a>
+            <a href="/cipher-worlds/en/terms/">Terms of use</a>
+            <a href="/cipher-worlds/en/refunds/">Refunds and cancellations</a>
+            <a href="/cipher-worlds/en/accessibility/">Accessibility statement</a>
+            <a href="/cipher-worlds/en/minors/">Children and parents</a>
+            <a href="/cipher-worlds/en/licenses/">Licences and credits</a>
+            <a href="/cipher-worlds/he/" lang="he">עברית</a>
+          </nav>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone"><img src="/img/cw-home.jpg" alt="The Cipher Worlds: Morse start screen with Pip" width="420" height="845"></div>
+        </div>
+      </div>
+      <div class="more">
+        <h4>More screens</h4>
+        <div class="strip">
+          <button type="button" class="swap-shot" aria-label="Show this screen on the phone"><img src="/img/cw-world.jpg" alt="The level map of one of the worlds" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="Show this screen on the phone"><img src="/img/cw-level.jpg" alt="A level: listen to the signal and choose the answer" width="420" height="845" loading="lazy"></button>
+          <button type="button" class="swap-shot" aria-label="Show this screen on the phone"><img src="/img/cw-pipworld.jpg" alt="Pip's world, which you build as you play" width="420" height="845" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream soon" aria-labelledby="soon-h">
+    <div class="wrap">
+      <div class="band-title">
+        <p class="eyebrow">Coming soon</p>
+        <h2 id="soon-h">New apps on the way</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <p class="eyebrow">About us</p>
+      <h2 id="about-h">Nice to meet you, we're RamiCoApps!</h2>
+      <p>We are an independent studio with a passion for building smart apps and addictive games. Every one of our apps comes from real life, and every game is made to bring a little joy. No complications and no tiring interfaces: just tools that work for you and games that are fun to spend time with, designed to be accessible and comfortable for everyone.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="RamiCoApps, home page"><svg width="22" height="28" aria-hidden="true"><use href="#tileR"/></svg><span class="word" style="font-size:20px"><b>RamiCo</b><i>Apps</i></span></a>
+    <div class="fl">
+      <a href="/en/privacy/">Privacy policy</a>
+      <a href="/en/accessibility/">Accessibility statement</a>
+      <span>Support: <a href="mailto:ramicoapps@gmail.com" dir="ltr">ramicoapps@gmail.com</a></span>
+      <span>© 2026 RamiCoApps</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* views */
+  var pages=[];
+  function show(){
+    var h=(location.hash||'').slice(1);
+    /* the old in-page documents moved to pages of their own */
+    if(h==='privacy'||h==='terms'){location.replace('/mishmeret/en/'+h+'/');return;}
+    var id=pages.indexOf(h)>-1?h:'home';
+    document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('on',v.id==='v-'+id);});
+    if(id!=='home'){window.scrollTo(0,0);}
+    else if(h==='apps'){window.scrollTo(0,0);}
+    else if(h){var el=document.getElementById(h);if(el){el.scrollIntoView();}}
+  }
+  window.addEventListener('hashchange',show);
+  show();
+
+  /* hero sky: drifting tiles and faint arcs */
+  var c=document.getElementById('sky'),x=c.getContext('2d'),W,H,tiles=[];
+  var cols=['#3B82F6','#EC4899','#F59E0B','#FBBF24','#FFFFFF'];
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){
+    var r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;
+    W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    tiles=[];var n=Math.round(W*H/9000);
+    for(var i=0;i<n;i++){var white=Math.random()<.7;
+      tiles.push({x:Math.random()*W,y:Math.random()*H,s:white?1.5+Math.random()*2:3+Math.random()*5,
+        c:white?'#FFFFFF':cols[Math.floor(Math.random()*4)],a:white?.15+Math.random()*.45:.35+Math.random()*.4,v:.05+Math.random()*.18});}
+  }
+  function arcs(){
+    x.strokeStyle='rgba(147,197,253,.16)';x.lineWidth=1;
+    for(var i=0;i<4;i++){x.beginPath();x.ellipse(W/2,H*1.25,W*(.35+i*.14),H*(.55+i*.16),0,Math.PI,2*Math.PI);x.stroke();}
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);arcs();
+    tiles.forEach(function(t){
+      x.globalAlpha=t.a;x.fillStyle=t.c;var r=Math.min(t.s*.3,2);
+      x.beginPath();x.roundRect?x.roundRect(t.x,t.y,t.s,t.s,r):x.rect(t.x,t.y,t.s,t.s);x.fill();
+      if(!still){t.y-=t.v;if(t.y<-10){t.y=H+10;t.x=Math.random()*W;}}
+    });
+    x.globalAlpha=1;
+    if(!still)requestAnimationFrame(draw);
+  }
+  size();draw();
+  window.addEventListener('resize',function(){size();if(still)draw();});
+})();
+</script>
+<script>
+document.querySelectorAll('.swap-shot').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var shot = btn.querySelector('img');
+    var phone = btn.closest('section').querySelector('.phone img');
+    var src = phone.src, alt = phone.alt;
+    phone.style.opacity = 0;
+    setTimeout(function () {
+      phone.src = shot.src; phone.alt = shot.alt;
+      shot.src = src; shot.alt = alt;
+      phone.style.opacity = 1;
+    }, 150);
+    if (window.innerWidth < 900) phone.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  });
+});
+</script>
+</body>
+</html>
