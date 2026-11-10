@@ -92,16 +92,13 @@ html{scroll-padding-top:84px}
 .ticks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px}
 .ticks li{display:flex;gap:10px;align-items:baseline;font-weight:500}
 .ticks li::before{content:"";flex:none;width:11px;height:11px;border-radius:3px;background:var(--spark);transform:translateY(-1px)}
-.stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.badge{display:flex;flex-direction:column;align-items:center;gap:6px}
-.store{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 18px 0 13px;border-radius:10px;background:#000;color:#fff;border:1px solid #A6A6A6;text-decoration:none;direction:ltr;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.05;white-space:nowrap}
-.store .tx{display:flex;flex-direction:column}
-.store small{font-size:11px;font-weight:500;letter-spacing:.2px}
-.store b{font-size:21px;font-weight:600;letter-spacing:-.2px}
-a.store:hover{border-color:#fff}
+.stores{display:flex;gap:12px 20px;flex-wrap:wrap;align-items:center;margin-top:28px}
+/* official badges; the Google Play file has a transparent margin, cancelled here so both show 54px tall */
+.store{display:inline-flex;align-items:center;height:54px;border-radius:9px}
+.store img{height:54px;width:auto;max-width:none}
+.store img.gp{height:81px;margin:0 -13px}
 a.store:focus-visible{outline:3px solid var(--spark);outline-offset:3px}
-.store.off{opacity:.6}
-.soon-tag{font-size:13px;font-weight:700;letter-spacing:.5px}
+.soon-text{font-size:15px;font-weight:700}
 @media (max-width:480px){.stores{flex-direction:column;align-items:flex-start}}
 .linkhint{font-size:14px;margin-top:10px;opacity:.85}
 .phone-wrap{display:flex;justify-content:center;position:relative}
@@ -166,8 +163,6 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
     <rect x="15.5" y="60.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="51.5" y="60.5" width="15" height="15" rx="4" fill="#F59E0B"/>
     <rect x="15.5" y="78.5" width="15" height="15" rx="4" fill="#3B82F6"/><rect x="69.5" y="78.5" width="15" height="15" rx="4" fill="#FBBF24"/>
   </symbol>
-  <symbol id="gplay" viewBox="0 0 22 26"><path fill="#00A0FF" d="M0 0 10.5 13 0 26Z"/><path fill="#00D95F" d="M0 0 15 8.86 10.5 13Z"/><path fill="#FFBC00" d="M15 8.86 22 13 15 17.14 10.5 13Z"/><path fill="#FF3A44" d="M0 26 10.5 13 15 17.14Z"/></symbol>
-  <symbol id="apple" viewBox="2.6 0 19 24"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></symbol>
 </svg>
 
 <!-- HOME -->
@@ -226,8 +221,8 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
             <li>תמיכה ב-7 שפות, מצב כהה ובהיר</li>
           </ul>
           <div class="stores">
-            <div class="badge"><a class="store" href="https://play.google.com/store/apps/details?id=com.ramicoapps.mishmeret" target="_blank" rel="noopener" aria-label="הורדה מ-Google Play (נפתח בכרטיסייה חדשה)"><svg width="24" height="28" aria-hidden="true"><use href="#gplay"/></svg><span class="tx"><small>GET IT ON</small><b>Google Play</b></span></a></div>
-            <div class="badge"><span class="store off"><svg width="22" height="28" aria-hidden="true"><use href="#apple"/></svg><span class="tx"><small>Download on the</small><b>App Store</b></span></span><span class="soon-tag">בקרוב</span></div>
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.ramicoapps.mishmeret" target="_blank" rel="noopener"><img class="gp" src="/img/badges/google-play-he.png" alt="הורדה מ-Google Play (נפתח בכרטיסייה חדשה)" width="210" height="81"></a>
+            <p class="soon-text">בקרוב ב-App Store</p>
           </div>
           <p class="linkhint">החישוב הוא אומדן בלבד. הוא אינו תלוש שכר ואינו ייעוץ משפטי, מיסויי או פיננסי.</p>
           <nav class="doclinks" aria-label="המסמכים של משמרת">
@@ -273,8 +268,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
             <li>בעברית ובאנגלית</li>
           </ul>
           <div class="stores">
-            <div class="badge"><span class="store off"><svg width="24" height="28" aria-hidden="true"><use href="#gplay"/></svg><span class="tx"><small>GET IT ON</small><b>Google Play</b></span></span><span class="soon-tag">בקרוב</span></div>
-            <div class="badge"><span class="store off"><svg width="22" height="28" aria-hidden="true"><use href="#apple"/></svg><span class="tx"><small>Download on the</small><b>App Store</b></span></span><span class="soon-tag">בקרוב</span></div>
+            <p class="soon-text">בקרוב ב-Google Play וב-App Store</p>
           </div>
           <p class="linkhint">המשחק כולל פרסומות ורכישות בתוך המשחק. הוא מיועד לילדים ולמבוגרים, ושחקנים מתחת לגיל 13 רואים רק פרסומות שאינן מותאמות אישית.</p>
           <nav class="doclinks" aria-label="המסמכים של Cipher Worlds">
